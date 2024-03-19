@@ -5,7 +5,7 @@ const listContainer = document.querySelector(".list-container");
 async function fetchTasks() {
   try {
     inputBox.focus();
-    const response = await fetch('http://localhost:3001/api/v1/tasks/todo');
+    const response = await fetch('https://todo-app-of0k.onrender.com/api/v1/tasks/todo');
     const tasks = await response.json();
     renderTasks(tasks);
   } catch (error) {
@@ -106,7 +106,7 @@ function createEditButton(listItem) {
 
 async function updateTaskTitle(id, newTitle) {
   try {
-    const response = await fetch('http://localhost:3001/api/v1/updatetask', {
+    const response = await fetch('https://todo-app-of0k.onrender.com/v1/updatetask', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -126,7 +126,7 @@ async function updateTaskTitle(id, newTitle) {
 
 async function updateTaskStatus(id,status){
   try{
-    const response = await fetch('http://localhost:3001/api/v1/updatestatus',{
+    const response = await fetch('https://todo-app-of0k.onrender.com/v1/updatestatus',{
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -147,7 +147,7 @@ async function updateTaskStatus(id,status){
 
 async function deleteTask (id){
   try{
-    const response = await fetch ('http://localhost:3001/api/v1/deletetask',{
+    const response = await fetch ('https://todo-app-of0k.onrender.com/api/v1/deletetask',{
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
@@ -190,7 +190,7 @@ inputBox.addEventListener("keypress", (e) => {
 
 async function addTask(title) {
   try {
-    const response = await fetch('http://localhost:3001/api/v1/addtask', {
+    const response = await fetch('https://todo-app-of0k.onrender.com/api/v1/addtask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
